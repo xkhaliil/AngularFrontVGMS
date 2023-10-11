@@ -1,0 +1,28 @@
+<div class="container">
+    
+        <div class="col-sm-4 col-md-4 col-lg-4 mb-4">
+            <label>NAME</label>
+            <input type="text" class="form-control" [(ngModel)]="Genre.nomGenre" name="nomgenre"  >
+            </div>
+            <div class="mt-2">
+        <button type="submit" (click)="AjouterGenre()"class="btn btn-success" >ADD</button>
+        </div>
+
+    <div class="card shadow mb-4">
+    <div class="card-body">
+    <table class="table table-striped">
+    <thead>
+    <tr> <th>Id</th><th>NAME</th> </tr>
+    </thead>
+    <tbody *ngFor="let l of genre">
+    <tr>
+    <td>{{l.idGenre}}</td>
+    <td>{{l.nomGenre}}</td>
+    <td><a class="btn btn-success" (click)="updateleg(l)">EDIT</a></td>
+
+    </tr>
+    </tbody>
+    </table>
+    </div>
+    </div>
+    </div>

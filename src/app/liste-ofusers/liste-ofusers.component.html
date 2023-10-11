@@ -1,0 +1,32 @@
+<div class="container">
+    <div class="card shadow mb-4">
+    <div class="card-body">
+    <table class="table table-striped">
+    <tr> <th>NAME</th><th>ROLES</th><th>FUNCTIONS</th><th></th></tr>
+    <tbody *ngFor="let a of users">
+    <tr >
+    <td>{{a.username}}</td>
+    <td>
+    <span *ngFor="let r of a.roles">
+        <td>
+            {{r.role}}
+        </td>
+
+    </span>
+    </td>
+    <td>
+    
+    <button class="btn btn-info"  [routerLink]="['/add-role-for-user',a.user_id]" >ADD ROLE</button>
+    </td>
+    <td>
+    <button class="btn btn-danger" (click)="deleteUser(a.user_id)">DELETE</button>
+    </td>
+    
+        
+    </tr>
+    </tbody>
+    
+    </table>
+    </div>
+    </div>
+    </div>

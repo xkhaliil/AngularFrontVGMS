@@ -1,0 +1,30 @@
+<div class="container mt-5">
+    <div class="row justify-content-md-center">
+        <div class="row justify-content-md-center">
+           
+            <div class="alert alert-danger" *ngIf="err==1">
+            <strong>USERNAME OR PASSWORD INPUT IS INCORRECT!</strong>
+            </div>
+            
+    
+    <form >
+    <div class="form-group">
+    <label >USERNAME :</label>
+    <input type="text" name="username"
+    class="form-control"
+    [(ngModel)]="user.username" >
+    </div>
+    <div class="form-group">
+    <label >PASSWORD :</label>
+    <input type="password" name="password"
+    [(ngModel)]="user.password" class="form-control">
+    </div>
+    <div class="row justify-content-md-center">
+    <button type="button" (click)="onLoggedin()"
+    class="btn btn-success">LOGIN</button>
+    </div>
+    <a class="form-group"  routerLink="/register">SIGNUP</a>
+    </form>
+    </div>
+    </div>
+    </div>

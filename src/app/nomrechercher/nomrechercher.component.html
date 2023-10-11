@@ -1,0 +1,29 @@
+<div class="container">
+    <form class="form-inline">
+        <div class="form-group mx-sm-3 mb-2 mt-2 ">
+        <label>NAME</label>
+        <input type="text" class="form-control" [(ngModel)]="nomgame" name="nomgame"  #searchTerm (keyup)="onKeyUp(searchTerm.value)">
+        
+        </div>
+        </form>
+<div class="container">
+    <div class="card shadow mb-4">
+    <div class="card-body">
+    <table class="table table-striped">
+    <tr> <th>ID</th><th>NAME</th> <th>PUBLISHER</th> <th>DATE</th><th>GENRE</th> </tr>
+    <tbody *ngFor="let game of game">
+    <tr >
+    <td>{{game.idGame}}</td>
+    <td>{{game.nomGame}}</td>
+    <td>{{game.publisher}}</td>
+    
+    <td>{{game.dateFound | date:'dd/MM/yyyy'}}</td>
+    <td>{{game.genre.nomGenre}}</td>
+    <td><a class="btn btn-success" *ngIf="authService.isAdmin()" [routerLink]="['/update-game',game.idGame]">UPDATE</a></td>
+    </tr>
+    </tbody>
+    
+    </table>
+    </div>
+    </div>
+    </div>
