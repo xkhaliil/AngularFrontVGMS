@@ -1,27 +1,43 @@
-# Game
+# Game (AngularFrontVGMS)
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.9.
+Angular front-end for a video game management system.
 
-## Development server
+![TypeScript](https://img.shields.io/badge/language-TypeScript-blue)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## What it does
 
-## Code scaffolding
+This is an Angular single-page app for managing a catalog of video games. It provides screens to list, add, and update games, products, and genres (`game`, `add-game`, `update-game`, `update-produit`, `liste-genre`, `update-genre`), search by name or category (`nomrechercher`, `recherche-par-categorie`), and manage users and roles (`liste-ofusers`, `add-role-for-user`, `register`). Authentication is handled via login/JWT (`login`, `game.guard.ts`, `@auth0/angular-jwt`), with a `forbidden` route for unauthorized access. Alerts/confirmations use SweetAlert2 and layout uses Bootstrap.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Tech stack
 
-## Build
+- Angular 13 (`@angular/core`, `@angular/router`, `@angular/forms`, `@angular/common/http`)
+- RxJS
+- `@auth0/angular-jwt` for JWT-based auth
+- Bootstrap for styling
+- SweetAlert2 for alerts/dialogs
+- Karma + Jasmine for unit testing
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Getting started
 
-## Running unit tests
+```bash
+npm install
+npm start        # ng serve, then open http://localhost:4200/
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Build for production:
 
-## Running end-to-end tests
+```bash
+npm run build     # ng build, output in dist/
+```
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Run unit tests:
 
-## Further help
+```bash
+npm test          # ng test, via Karma
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+<!-- TODO: add a screenshot -->
+
+## License
+
+No license file is present in this repository.
